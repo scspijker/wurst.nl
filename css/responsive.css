@@ -13,7 +13,7 @@
 	/*	bottom: auto; */
 	}
 	.welcome-title:before {
-		margin: 20px auto 5px;
+		margin: auto auto;
 	}
 	.welcome-first {
 		font-size: 26px;

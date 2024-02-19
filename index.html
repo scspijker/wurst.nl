@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+
+    <title>Countdown to MegaMotorTrip Greece</title>
+<!--
+Elegance Template
+https://templatemo.com/tm-528-elegance
+-->
+
+    <script>
+        // Function to calculate the time difference between two dates
+        function getTimeRemaining(endtime) {
+            const total = Date.parse(endtime) - Date.parse(new Date());
+            const seconds = Math.floor((total / 1000) % 60);
+            const minutes = Math.floor((total / 1000 / 60) % 60);
+            const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+            const days = Math.floor(total / (1000 * 60 * 60 * 24));
+            const weeks = Math.floor(days / 7);
+
+            return {
+                total,
+                weeks,
+                days: days % 7,
+                hours,
+                minutes,
+                seconds
+            };
+        }
+
+        // Function to initialize the countdown and update it every second
+        function initializeClock(id, endtime) {
+            const clock = document.getElementById(id);
+            const weeksSpan = clock.querySelector('.weeks');
+            const daysSpan = clock.querySelector('.days');
+            const hoursSpan = clock.querySelector('.hours');
+            const minutesSpan = clock.querySelector('.minutes');
+            const secondsSpan = clock.querySelector('.seconds');
+
+            function updateClock() {
+                const t = getTimeRemaining(endtime);
+
+                weeksSpan.innerHTML = t.weeks;
+                daysSpan.innerHTML = t.days;
+                hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+                if (t.total <= 0) {
+                    clearInterval(timeinterval);
+                }
+            }
+
+            updateClock();
+            const timeinterval = setInterval(updateClock, 1000);
+        }
+    </script>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/fullpage.min.css">
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+ 
+  </head>
+
+  <body>
+
+  <div id="video">
+      <div class="preloader">
+          <div class="preloader-bounce">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+      </div>
+
+     <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
+          <iframe frameborder="0" height="100%" width="100%" 
+            src="https://youtube.com/embed/DmYRB8u2yTk?autoplay=1&controls=0&showinfo=0&autohide=1">
+          </iframe>
+     </div>
+
+
+      <div id="fullpage" class="fullpage-default">
+          <div class="section animated-row" data-section="slide01">
+              <div class="section-inner">
+                  <div class="welcome-box">
+                      <h2 class="welcome-first animate" data-animate="fadeInUp">MEGA MOTOR TRIP</h2>
+                      <h1 class="welcome-title animate" id="countdown" data-animate="fadeInUp">
+                        <span class="weeks"></span> weeks <span class="days"></span> days<br />
+                        <span class="hours"></span>:<span class="minutes"></span>:<span class="seconds"></span>
+                      </h1>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>  
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/fullpage.min.js"></script>
+  <script src="js/scrolloverflow.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.inview.min.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+      // Set the target date for the countdown
+      const deadline = new Date('2024-12-31T23:59:59');
+
+      // Initialize the countdown
+      initializeClock('countdown', deadline);
+</script>
+  </body>
+</html>

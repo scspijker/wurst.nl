@@ -21,7 +21,7 @@ https://templatemo.com/tm-528-elegance
             const total = Math.max(0, Date.parse(endtime) - Date.parse(new Date()));
             const seconds = Math.floor((total / 1000) % 60);
             const minutes = Math.floor((total / 1000 / 60) % 60);
-            const hours = Math.floor((total / (1000 * 60 * 60)));// % 24);
+            const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
             const days = Math.floor(total / (1000 * 60 * 60 * 24));
             const weeks = Math.floor(days / 7);
 
